@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      {
+        console.log(`1. 배열에 상품 추가하기`);
+        const cart = [];
+        cart.push({ name: "누텔라", price: 11900 });
+        cart.push({ name: "딸기잼", price: 8900 });
+        cart.push({ name: "사과잼", price: 9900 });
+        cart.push({ name: "땅콩잼", price: 10900 });
+
+        console.log([...cart]);
+        console.log(`2. 특정 상품 삭제하기`);
+        cart.splice(3, 1);
+
+        console.log([...cart]);
+        console.log(`3. 상품 목록 출력하기`);
+
+        console.log(`방법 2`);
+        for (item of cart) {
+          for (let key in item) {
+            console.log(`${key}: ${item[key]}`);
+          }
+        }
+
+        console.log(`방법 2`);
+        for (item of cart) {
+          for (let key in item) {
+            console.log(`${item.name}: ${item.price}`);
+          }
+        }
+
+        console.log(`4. 가격순 정렬하기`);
+
+        cart.sort((a, b) => a.price - b.price);
+        for (item of cart) {
+          for (let key in item) {
+            console.log(`${item.name}: ${item.price}`);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
