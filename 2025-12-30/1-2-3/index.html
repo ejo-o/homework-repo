@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>학생 정보 객체 관리하기</title>
+  </head>
+  <body>
+    <script>
+      {
+        //1번. 학생 객체 생성
+        const student = {
+          name: "은주",
+          age: 23,
+          scores: { math: 55, english: 80 },
+        };
+        console.log({ "내 정보": student });
+        //2번..? 동적 속성 접근
+        function getProperty(obj, key) {
+          return obj[key];
+        }
+
+        //3번. scores 평균 계산 함수 작성
+        function avgScores(scores) {
+          return (scores.math + scores.english) / 2;
+        }
+
+        //원본 확인 및 출력
+        console.log(`객체 원본 : `, student);
+
+        const getName = getProperty(student, "name");
+        console.log(`이름:`, getName);
+
+        const getAge = getProperty(student, "age");
+        console.log(`나이:`, getAge);
+
+        const getAverageScores = avgScores(student.scores);
+        console.log(`평균:`, getAverageScores);
+
+        //4번. 객체 복사 후 확인
+        //객체 깊은 복사
+        const studentDeepCopy = JSON.parse(JSON.stringify(student));
+        studentDeepCopy.scores.english = 93;
+        console.log(`객체 깊은 복사 : `, studentDeepCopy);
+
+        const getCopyName = getProperty(studentDeepCopy, "name");
+        console.log(`이름:`, getCopyName);
+
+        const getCopyAge = getProperty(studentDeepCopy, "age");
+        console.log(`나이:`, getCopyAge);
+
+        const getCopyAverageScores = avgScores(studentDeepCopy.scores);
+        console.log(`평균:`, getCopyAverageScores);
+
+        //객체 얕은 복사
+        // const studentSpreadCopy = { ...student };
+
+        // studentSpreadCopy.scores.math = 22;
+        // console.log(studentSpreadCopy);
+      }
+    </script>
+  </body>
+</html>
