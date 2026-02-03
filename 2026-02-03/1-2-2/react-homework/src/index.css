@@ -1,0 +1,51 @@
+/* 전체적인 레이아웃 정렬 */
+main,
+header,
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+/* 배경 색상 설정 */
+body {
+  background-color: #c9ffef;
+}
+
+/* 헤더 스타일링 */
+header h1 {
+  margin: 0;
+  padding: 10px;
+}
+
+/* 카드 스타일링 */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  width: 300px;
+  border: 1px solid #eee;
+}
+
+/* 푸터 스타일링 */
+footer {
+  padding: 10px;
+  font-size: 10px;
+}
+
+/* 카드 안의 텍스트 꾸미기 */
+.card p {
+  margin: 10px 0;
+  color: #333;
+  font-size: 16px;
+  border-bottom: 1px dashed #8df5cd;
+  padding-bottom: 5px;
+}
+
+/* 특정 항목 강조 (예: 이름) */
+.card p:first-child {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 18px;
+  border-bottom: 2px solid #2c3e50;
+}
